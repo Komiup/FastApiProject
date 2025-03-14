@@ -7,5 +7,4 @@ router = APIRouter()
 
 @router.get("/", response_model=ResponseBase)
 async def read_root():
-    result = await responce_base_router()
-    return result
+    return await responce_base_router()
