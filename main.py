@@ -1,8 +1,6 @@
 from fastapi import FastAPI
-
+from src.api.routers import base_router
 app = FastAPI()
 
-# Определяем маршрут (эндпоинт) по адресу "/"
-@app.get("/")
-async def read_root():
-    return {"message": "Привет, FastAPI!"}
+app.include_router(base_router.router)
+
